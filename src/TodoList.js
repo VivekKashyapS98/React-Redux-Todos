@@ -13,7 +13,7 @@ class TodoList extends Component{
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.dispatch(createTodo(this.state.todo));
+        this.props.createTodo(this.state.todo);
         this.setState({todo: ""});
     }
 
@@ -22,7 +22,7 @@ class TodoList extends Component{
     }
 
     removeTodo(id) {
-        this.props.dispatch(removeTodo(id));
+        this.props.removeTodo(id);
     }
 
     render() {
@@ -48,4 +48,4 @@ function mapStateToProps(reduxState) {
     }
 }
 
-export default connect(mapStateToProps)(TodoList);
+export default connect(mapStateToProps, { createTodo, removeTodo })(TodoList);
