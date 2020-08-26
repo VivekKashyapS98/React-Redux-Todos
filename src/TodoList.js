@@ -19,7 +19,7 @@ class TodoList extends Component{
         return (
             <div>
                 <Route path="/todos/new" render={props => (
-                    <NewTodo {...props} handleSubmit={val => this.handleAdd(val)} />
+                    <NewTodo {...props} handleAdd={val => this.handleAdd(val)} />
                 )} />
                 <Route exact path="/todos" component={() => <ul>{todos}</ul>} />
             </div>

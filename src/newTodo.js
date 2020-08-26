@@ -14,7 +14,7 @@ export default class newTodo extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.handleSubmit(this.state.todo);
+        this.props.handleAdd(this.state.todo);
         this.setState({todo: ""});
         this.props.history.push("/todos");
     }
