@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux';
 import rootReducer from './rootReducer';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const store = createStore(rootReducer, 
                           window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
@@ -14,7 +15,9 @@ const store = createStore(rootReducer,
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store} >
+    <Router>
     <App />
+    </Router>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
